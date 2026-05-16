@@ -41,9 +41,9 @@
 <h3>STEP 5:</h3>
 <p>Measure the performance parameters: For each treatment performance incremented, for each movement performance decremented</p>
 <h3>PROGRAM</h3>
-<td><strong>import random
+<td><strong>
+import random
 import time
-
 class HealthMonitoringAgent:
     def __init__(self, patient_data, sensors, actuators):
         self.patient_data = patient_data
@@ -106,4 +106,5 @@ if __name__ == "__main__":
     actuators = HealthActuators()
 
     agent = HealthMonitoringAgent(patient_data, sensors, actuators)
-    agent.monitor_health()</strong></td>
+    agent.monitor_health()
+    </strong></td>
