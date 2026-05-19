@@ -40,7 +40,8 @@
 <p>Treat unhealthy patients in each room. And check for the unhealthy patients in random room</p>
 <h3>STEP 5:</h3>
 <p>Measure the performance parameters: For each treatment performance incremented, for each movement performance decremented</p>
-<h3>PROGRAM</h3>
+
+### PROGRAM
 ```
 import random
 import time
@@ -89,7 +90,10 @@ if __name__ == "__main__":
     actuators = HealthActuators()
     agent = HealthMonitoringAgent(patient_data, sensors, actuators)
     agent.monitor_health()
-    ```
+ ```
     
 <h3>OUTPUT</h3>
+<img width="802" height="91" alt="image" src="https://github.com/user-attachments/assets/3d999d63-ddcb-4ebb-817b-97eee99a66af" />
+
 <h3>RESULT</h3>
+Hence, the solution for the given AI problem is found.
