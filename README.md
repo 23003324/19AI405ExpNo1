@@ -44,43 +44,31 @@
 ```
 import random
 import time
-
 class HealthMonitoringAgent:
     def __init__(self, patient_data, sensors, actuators):
         self.patient_data = patient_data
         self.sensors = sensors
         self.actuators = actuators
         print(f"Monitoring health for patient: {self.patient_data['name']}")
-
     def monitor_health(self):
-
         while True:
             current_health_state = self.sensors.get_health_state()
             action = self.choose_action(current_health_state)
-
             print("Current Health State:", current_health_state)
             self.actuators.perform_action(action)
-
             if action == "No specific action needed":
                 print("Patient is stable. Monitoring stopped.")
                 break
-
             time.sleep(1)
-
     def choose_action(self, current_health_state):
         if current_health_state['heart_rate'] > 120:
             return "Alert healthcare provider: High heart rate detected"
-
         elif current_health_state['blood_pressure'] > 140:
             return "Alert healthcare provider: High blood pressure detected"
-
         elif current_health_state['temperature'] > 38:
             return "Recommend rest and monitor temperature"
-
         else:
             return "No specific action needed"
-
-
 class HealthSensors:
     def get_health_state(self):
         return {
@@ -88,24 +76,17 @@ class HealthSensors:
             'blood_pressure': random.randint(90, 160),
             'temperature': round(random.uniform(36.0, 38.5), 1)
         }
-
-
 class HealthActuators:
     def perform_action(self, action):
         print("Action:", action)
-
-
 if __name__ == "__main__":
-
     patient_data = {
         'patient_id': 123,
         'name': 'John Doe',
         'age': 35
     }
-
     sensors = HealthSensors()
     actuators = HealthActuators()
-
     agent = HealthMonitoringAgent(patient_data, sensors, actuators)
     agent.monitor_health()
     ```
